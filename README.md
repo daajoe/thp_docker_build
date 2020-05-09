@@ -38,6 +38,10 @@ To run a single solver execute the following command:
 or
 ```sudo make build_solver ARGS="solver_scripts/sat/minisat.sh"```
 
+Test if the solver was build correctly:
+```grep "GLIBC_THP_ALWAYS" <your-binary>```
+
+It should output: Binary file <your-binary> matches
 
 To build all solvers using scripts, which are named solver_scripts/**/*.sh.
 Simply execut the following command:
