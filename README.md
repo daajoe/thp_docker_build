@@ -26,25 +26,25 @@ on your system without installing a modified glibc.
 ## Usage
 
 ### Prepare the Compiler System
-```make glibc```
+```sudo make glibc```
 
 ### Build a Solver
 The solver build scripts are placed under "solver_scripts/". For example,
 "solver_scripts/sat/minisat.sh".
 
 To run a single solver execute the following command:
-```./build_solver solver_scripts/sat/minisat.sh```
+```sudo ./build_solver solver_scripts/sat/minisat.sh```
 
 or
-```make build_solver ARGS="solver_scripts/sat/minisat.sh"```
+```sudo make build_solver ARGS="solver_scripts/sat/minisat.sh"```
 
 
 To build all solvers using scripts, which are named solver_scripts/**/*.sh.
 Simply execut the following command:
-```./build_solver solver_scripts/sat/minisat.sh```
+```sudo ./build_solver solver_scripts/sat/minisat.sh```
 
 or
-```make build_solver```
+```sudo make build_solver```
 
 
 
@@ -52,7 +52,7 @@ or
 
 #### Usual Run
 Run as usual:
-```./build/minisat_glibc <input.cnf>```
+```sudo ./build/minisat_glibc <input.cnf>```
 
 #### THP Run
 To check whether the system has transparent huge pages enabled for being usable
