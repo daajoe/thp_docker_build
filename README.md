@@ -14,7 +14,7 @@ For a detailed description, we refer to a recent report
 ## External Requirements
 
 - Linux
-- Docker (recent version), see [https://docs.docker.com/engine/install/](Docker CE)
+- Docker (recent version), see [Docker CE](https://docs.docker.com/engine/install/)
 
 
 ## Short Description
@@ -80,4 +80,4 @@ the execution of the solver:
 
 
 ---
-[1]: [https://www.kernel.org/doc/Documentation/vm/transhuge.txt](Kernel Documentation on Transparent Huge Pages)
+[1]: [Kernel Documentation on Transparent Huge Pages](https://www.kernel.org/doc/Documentation/vm/transhuge.txt)
