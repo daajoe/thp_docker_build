@@ -52,7 +52,7 @@ or
 
 #### Usual Run
 Run as usual:
-```sudo ./build/minisat_glibc <input.cnf>```
+```./build/minisat_glibc <input.cnf>```
 
 #### THP Run
 To check whether the system has transparent huge pages enabled for being usable
