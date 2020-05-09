@@ -1,0 +1,47 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get -y install gcc automake zlib1g-dev make cmake
+
+RUN apt-get -y install g++ git
+
+RUN apt-get -y install build-essential fakeroot dpkg-dev
+
+RUN apt-get -y install systemtap-sdt-dev
+
+RUN apt-get -y install gawk perl autoconf gettext bison
+
+RUN apt-get -y install wget
+
+RUN apt-get -y install texi2html texinfo
+
+RUN apt-get -y install flex bison libwww-perl patch libgmp-dev
+
+RUN apt-get -y install ninja-build
+
+# work with gcc7 from now on
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y
+RUN apt-get update -q
+RUN apt-get install g++-7 gcc-7 -y
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+RUN update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-7 60
+RUN update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-7 60
+RUN update-alternatives --install /usr/bin/x86_64-linux-gnu-gcc x86_64-linux-gnu-gcc /usr/bin/x86_64-linux-gnu-gcc-7 60 --slave /usr/bin/x86_64-linux-gnu-g++ x86_64-linux-gnu-g++ /usr/bin/x86_64-linux-gnu-g++-7
+
+# get java
+RUN apt-get install -y --no-install-recommends default-jdk
+
+# get boost
+RUN apt-get install -y --no-install-recommends libboost-dev
+
+# for zip packages
+RUN apt-get -y install unzip
+
+ADD . /tmp/thp_docker_build
+WORKDIR /tmp/thp_docker_build
+
+ADD build/glibc /glibc
+ADD ./scripts/install-root-glibc.sh /
+RUN /install-root-glibc.sh

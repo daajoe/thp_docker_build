@@ -1,0 +1,19 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get -y install gcc automake zlib1g-dev make cmake
+
+RUN apt-get -y install g++ git
+
+RUN apt-get -y install build-essential fakeroot dpkg-dev
+
+RUN apt-get -y install systemtap-sdt-dev
+
+RUN apt-get -y install gawk perl autoconf gettext bison
+
+RUN apt-get -y install wget
+
+RUN apt-get -y install texi2html texinfo
+
+ADD . /tmp/thp_docker_build
+WORKDIR /tmp/thp_docker_build

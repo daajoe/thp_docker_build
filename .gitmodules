@@ -1,0 +1,3 @@
+[submodule "thp"]
+	path = thp
+	url = git@github.com:conp-solutions/thp.git

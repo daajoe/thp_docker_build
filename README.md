@@ -1,1 +1,0 @@
-# thp_docker_build
