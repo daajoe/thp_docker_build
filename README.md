@@ -52,7 +52,7 @@ or
 
 #### Usual Run
 Run as usual:
-```./minisat_glibc <input.cnf>```
+```./build/minisat_glibc <input.cnf>```
 
 #### THP Run
 To check whether the system has transparent huge pages enabled for being usable
@@ -68,7 +68,10 @@ If madvise is not set run:
 
 
 Run the solver with transparent huge pages, and 2M alignment enabled:
-```GLIBC_THP_ALWAYS=1 ./minisat_glibc <input.cnf>```
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)```GLIBC_THP_ALWAYS=1 ./build/minisat_glibc <input.cnf>```
+
+en tibi 
 
 
 To check whether huge pages are used on your linux system, run the following command in parallel to
